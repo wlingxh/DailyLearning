@@ -1,0 +1,9 @@
+rootProject.name = 'demo'
+
+include 'demo-springboot'
+include 'demo-redis'
+include 'demo-kafka'
+include 'demo-java'
+include 'demo-gradle'
+include 'demo-algorithm'
+include 'demo-data-structure'

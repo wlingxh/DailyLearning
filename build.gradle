@@ -1,0 +1,122 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    version = '1.0'
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter:2.1.5.RELEASE'
+        compile 'org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE'
+    }
+}
+
+project(':demo-springboot') {
+
+    dependencies{
+
+    }
+
+    uploadArchives {
+        repositories {
+            flatDir {
+                dirs 'repos'
+            }
+        }
+    }
+}
+
+project(':demo-redis') {
+
+}
+
+project(':demo-kafka') {
+
+}
+
+project(':demo-java') {
+
+}
+
+project(':demo-algorithm') {
+
+}
+
+project(':demo-gradle') {
+    version = '1.0'
+    //gradle -q task <<不运行
+    task hello << {
+        println 'Hello World'
+    }
+    //--------------------------------------------------
+    //task定义
+    tasks.create(name: 'hello1') << {
+        println 'Hello World 1'
+        //以属性方式访问task
+        println hello.name
+        //通过tasks集合访问task
+        println tasks['hello1'].name
+    }
+    task hello2(dependsOn: ':demo-gradle:hello') doFirst{
+        println 'Hello World 2'
+    }
+    //--------------------------------------------------
+    task taskX << {
+        println 'taskX'
+    }
+    taskX.dependsOn {
+        tasks.findAll { task -> task.name.startsWith('lib') }
+    }
+    task lib1 << {
+        println 'lib1'
+    }
+    task lib2 << {
+        println 'lib2'
+    }
+    task notALib << {
+        println 'notALib'
+    }
+    //--------------------------------------------------
+    //复制task
+    task springJar(type: Copy) {
+        from('build/libs/demo-gradle-1.0.jar')
+        into('build/')
+    }
+    //--------------------------------------------------
+    //map
+    //Map<String, String> map = new HashMap<String, String>()
+    //map.put('plugin', 'java')
+    //apply(map)
+    apply plugin: 'java'
+    //ext代码块可以用来添加额外的属性
+    ext {
+        springVersion = '2.1.5.RELEASE'
+        emailNotification = 'qq@mail.com'
+    }
+    //源码集(source set)属于gradle的域模型
+    sourceSets.all { ext.purpose = null }
+    sourceSets {
+        main {
+            purpose = "production"
+        }
+        test {
+            purpose = "test"
+        }
+        plugin {
+            purpose = "production"
+        }
+    }
+
+    task printProperties << {
+        println springVersion
+        println emailNotification
+        sourceSets.matching { it.purpose == "production" }.each { println it.name }
+    }
+
+    task printSourceSet<<{
+        println sourceSets.each{println it.name}
+    }
+
+
+}
