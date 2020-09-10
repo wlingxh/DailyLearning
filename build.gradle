@@ -4,11 +4,16 @@ subprojects {
     version = '1.0'
     repositories {
         mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://mvnrepository.com/artifact/' }
     }
 
     dependencies {
         compile 'org.springframework.boot:spring-boot-starter:2.1.5.RELEASE'
         compile 'org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE'
+        // https://mvnrepository.com/artifact/org.projectlombok/lombok
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+
     }
 }
 

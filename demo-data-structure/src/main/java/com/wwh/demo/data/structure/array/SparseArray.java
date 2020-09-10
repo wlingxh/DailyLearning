@@ -1,4 +1,4 @@
-package com.wwh.demo.data.structure;
+package com.wwh.demo.data.structure.array;
 
 /**
  * 稀疏数组
