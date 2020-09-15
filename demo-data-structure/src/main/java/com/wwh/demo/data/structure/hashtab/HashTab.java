@@ -1,5 +1,7 @@
 package com.wwh.demo.data.structure.hashtab;
 
+import com.wwh.demo.common.pojo.Emp;
+
 public class HashTab {
     private EmpLinkedList[] empLinkedListArray ;
     private int size;

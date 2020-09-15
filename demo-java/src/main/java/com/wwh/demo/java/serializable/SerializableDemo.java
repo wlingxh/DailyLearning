@@ -1,10 +1,8 @@
 package com.wwh.demo.java.serializable;
 
-import com.wwh.demo.java.serializable.pojo.User;
+import com.wwh.demo.common.pojo.User;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
 
 public class SerializableDemo {
 

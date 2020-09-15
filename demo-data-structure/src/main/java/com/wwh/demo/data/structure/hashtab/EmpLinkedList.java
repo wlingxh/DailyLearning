@@ -1,5 +1,7 @@
 package com.wwh.demo.data.structure.hashtab;
 
+import com.wwh.demo.common.pojo.Emp;
+
 public class EmpLinkedList {
 
     private Emp head;

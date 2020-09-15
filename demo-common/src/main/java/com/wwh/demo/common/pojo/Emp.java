@@ -1,8 +1,7 @@
-package com.wwh.demo.data.structure.hashtab;
+package com.wwh.demo.common.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

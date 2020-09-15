@@ -1,4 +1,4 @@
-package com.wwh.demo.java.serializable.pojo;
+package com.wwh.demo.common.pojo;
 
 import java.io.Serializable;
 

@@ -32,19 +32,11 @@ project(':demo-springboot') {
     }
 }
 
-project(':demo-redis') {
-
-}
-
-project(':demo-kafka') {
-
-}
-
-project(':demo-java') {
-
-}
-
 project(':demo-algorithm') {
+
+}
+
+project(':demo-common') {
 
 }
 
@@ -124,4 +116,28 @@ project(':demo-gradle') {
     }
 
 
+}
+
+project(':demo-java') {
+    //依赖
+    dependencies {
+        compile project(":demo-common")
+
+    }
+}
+
+project(':demo-kafka') {
+
+}
+
+project(':demo-redis') {
+
+}
+
+project(':demo-data-structure') {
+    //依赖
+    dependencies {
+        compile project(":demo-common")
+
+    }
 }
