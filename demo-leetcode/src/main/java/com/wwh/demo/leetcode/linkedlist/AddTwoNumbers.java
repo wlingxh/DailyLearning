@@ -40,7 +40,7 @@ public class AddTwoNumbers {
      * 执行用时：2 ms, 在所有 Java 提交中击败了99.88%的用户
      * 内存消耗：39 MB, 在所有 Java 提交中击败了45.50%的用户
      *
-     *
+     * 还可以改进：
      */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int temp = 0;
@@ -64,6 +64,7 @@ public class AddTwoNumbers {
                 result.val = res;
                 continue;
             }
+            //还可以改进：
             ListNode tempNode = result;
             while (tempNode.next != null) {
                 tempNode = tempNode.next;
