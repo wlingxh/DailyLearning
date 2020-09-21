@@ -130,6 +130,10 @@ project(':demo-kafka') {
 
 }
 
+project(':demo-leetcode') {
+
+}
+
 project(':demo-redis') {
 
 }
