@@ -15,6 +15,11 @@ subprojects {
         compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 
     }
+
+    //编译JAVA文件时采用UTF-8
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
 }
 
 project(':demo-springboot') {
